@@ -1,0 +1,36 @@
+{
+  "name": "chattr-server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "concurrently -p \"[{time}] [{name}]\" -n \"nodemon,webpack\" -t \"HH:mm:ss\" -c \"grey.dim,white.bold\" \"npm run watch:server\" \"npm run watch:build\"",
+    "watch:build": "webpack --watch",
+    "watch:server": "nodemon \"./dist/bundle.js\" --watch \"./dist\""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chattr-org/chattr-server.git"
+  },
+  "author": "keawade",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/chattr-org/chattr-server/issues"
+  },
+  "homepage": "https://github.com/chattr-org/chattr-server#readme",
+  "dependencies": {
+    "babel": "^6.5.2",
+    "escape-string-regexp": "^1.0.5",
+    "ws": "^1.1.1",
+    "webpack": "^2.1.0-beta.25"
+  },
+  "devDependencies": {
+    "babel-eslint": "^6.1.2",
+    "babel-loader": "^6.2.5",
+    "concurrently": "^2.2.0",
+    "eslint": "^3.5.0",
+    "eslint-loader": "^1.5.0",
+    "nodemon": "^1.10.2",
+    "npm-run-all": "^3.1.0"
+  }
+}
